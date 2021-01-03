@@ -15,12 +15,12 @@ pipeline {
 			parallel {
 		        stage('Deployment to staging server') {
 		        	steps {
-			            sh "Deploying to ${params.staging_server}"
+			            sh 'echo "Deploying to ${params.staging_server}"'
 			        }
 			    }
 			    stage('Deployment to production server') {
 			    	steps {
-			            sh "Deploying to ${params.production_server}"
+			            sh 'echo "Deploying to ${params.production_server}"'
 			        }
 			    }
 			}
