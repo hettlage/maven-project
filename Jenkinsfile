@@ -14,10 +14,14 @@ pipeline {
 		stage('Deployments') {
 			parallel {
 		        stage('Deployment to staging server') {
-			        sh "Deploying to ${params.staging_server}"
+		        	steps {
+			            sh "Deploying to ${params.staging_server}"
+			        }
 			    }
 			    stage('Deployment to production server') {
-			        sh "Deploying to ${params.production_server}"
+			    	steps {
+			            sh "Deploying to ${params.production_server}"
+			        }
 			    }
 			}
 		}
